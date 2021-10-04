@@ -1,0 +1,18 @@
+1. Difference between let and var?
+
+var and let are both used for variable declaration in javascript but the difference between them is that var is function scoped and let is block scoped.
+It can be said that a variable declared with var is defined throughout the program as compared to let.
+Example:
+let a = 'hello'; // globally scoped
+var b = 'world'; // globally scoped
+console.log(window.a); // undefined
+console.log(window.b); // 'world'
+var a = 'hello';
+var a = 'world'; // No problem, 'hello' is replaced.
+let b = 'hello';
+let b = 'world'; // SyntaxError: Identifier 'b' has already been declared.
+
+2. Why are null,array printed as object type in console?
+
+typeof null returns "object" because of a peculiarity in the design of the language, stemming from the demand that JavaScript be interoperable with Java. It does not mean null is an instance of an object. It means: given the tree of primitive types in JavaScript, null is part of the "object-type primitive" subtree.
+
